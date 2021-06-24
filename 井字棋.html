@@ -64,49 +64,53 @@
 		        	boxList[id - 1] = controlTemp;
 		        }
 
-		        if(boxList[0] == boxList[1] && boxList[1]== boxList[2]) {
-		        	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
-		        	return;
-		        }
+		        setTimeout(function() {
+		        	if(boxList[0] == boxList[1] && boxList[1]== boxList[2]) {
+			        	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
+			        	return;
+			        }
 
-		        if(boxList[3] == boxList[4] && boxList[4] == boxList[5]) {
-		        	boxList[3] ? alert("X wins!!!") : alert("O wins!!!");
-		        	return;
-		        }
+			        if(boxList[3] == boxList[4] && boxList[4] == boxList[5]) {
+			        	boxList[3] ? alert("X wins!!!") : alert("O wins!!!");
+			        	return;
+			        }
 
-		        if (boxList[6] == boxList[7] && boxList[7] == boxList[8]) {
-		        	boxList[7] ? alert("X wins!!!") : alert("O wins!!!");
-		        	return;
-		        }
+			        if (boxList[6] == boxList[7] && boxList[7] == boxList[8]) {
+			        	boxList[7] ? alert("X wins!!!") : alert("O wins!!!");
+			        	return;
+			        }
 
-		        if (boxList[0] == boxList[3] && boxList[3] == boxList[6]) {
-		        	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
-		        	return;
-		        }
+			        if (boxList[0] == boxList[3] && boxList[3] == boxList[6]) {
+			        	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
+			        	return;
+			        }
 
-		        if (boxList[1] == boxList[4] && boxList[4] == boxList[7]) {
-		        	boxList[1] ? alert("X wins!!!") : alert("O wins!!!");
-		        	return;
-		        } 
+			        if (boxList[1] == boxList[4] && boxList[4] == boxList[7]) {
+			        	boxList[1] ? alert("X wins!!!") : alert("O wins!!!");
+			        	return;
+			        } 
 
-		        if (boxList[2] == boxList[5] && boxList[5] == boxList[8]) {
-		        	boxList[2] ? alert("X wins!!!") : alert("O wins!!!");
-		        	return;
-		        } 
+			        if (boxList[2] == boxList[5] && boxList[5] == boxList[8]) {
+			        	boxList[2] ? alert("X wins!!!") : alert("O wins!!!");
+			        	return;
+			        } 
 
-		        if (boxList[0] == boxList[4] && boxList[4] == boxList[8]) {
-		         	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
-		         	return;
-		        }
+			        if (boxList[0] == boxList[4] && boxList[4] == boxList[8]) {
+			         	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
+			         	return;
+			        }
 
-		        if (boxList[2] == boxList[4] && boxList[4] == boxList[6]) {
-					boxList[2] ? alert("X wins!!!") : alert("O wins!!!");
-					return;
-		        }
+			        if (boxList[2] == boxList[4] && boxList[4] == boxList[6]) {
+						boxList[2] ? alert("X wins!!!") : alert("O wins!!!");
+						return;
+			        }
 
-		        if(clickTimes == 9) {
-		        	alert("平局！！");
-		        }
+			        if(clickTimes == 9) {
+			        	alert("平局！！");
+			        }
+
+			        return;
+		        }, 100);
 
 		    });
 		</script>
