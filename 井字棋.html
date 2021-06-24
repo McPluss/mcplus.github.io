@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8"> 
+		<title>井字棋</title>
+	</head>
+	<style type="text/css">
+		.border {
+			display: grid;
+			grid-template-columns: repeat(3, 150px);
+			grid-template-rows: repeat(3, 150px);
+		}
+
+		.box {
+			border: solid;
+			border-width: 1px;
+		    display:flex;
+		    align-items:center;
+		    justify-content:center;
+		    font-size: 500%
+		}
+	</style>
+	<body>
+		<div class="border" id="border">
+			<div class="box" id="1"></div>
+			<div class="box" id="2"></div>
+			<div class="box" id="3"></div>
+			<div class="box" id="4"></div>
+			<div class="box" id="5"></div>
+			<div class="box" id="6"></div>
+			<div class="box" id="7"></div>
+			<div class="box" id="8"></div>
+			<div class="box" id="9"></div>
+		</div>
+
+		<script
+	  		src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+		  	integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+		  	crossorigin="anonymous"
+		></script>
+
+		<script type="text/javascript">
+			var $ = mdui.$;
+			boxList = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+
+			controlTemp = 0;
+
+			clickTimes = 0;
+
+			$(document).on("click", function (e) {
+		        var id = parseInt(e.target.id);
+		        var box = document.getElementById(id);
+
+		        if(boxList[id - 1] != true && boxList[id - 1] != false) {
+			        if(!controlTemp) {
+			        	box.innerHTML = 'X';
+			        } else {
+				        box.innerHTML = 'O';
+			        }
+			        controlTemp = !controlTemp;
+
+			        clickTimes++;
+
+		        	boxList[id - 1] = controlTemp;
+		        }
+
+		        if(boxList[0] == boxList[1] && boxList[1]== boxList[2]) {
+		        	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
+		        	return;
+		        }
+
+		        if(boxList[3] == boxList[4] && boxList[4] == boxList[5]) {
+		        	boxList[3] ? alert("X wins!!!") : alert("O wins!!!");
+		        	return;
+		        }
+
+		        if (boxList[6] == boxList[7] && boxList[7] == boxList[8]) {
+		        	boxList[7] ? alert("X wins!!!") : alert("O wins!!!");
+		        	return;
+		        }
+
+		        if (boxList[0] == boxList[3] && boxList[3] == boxList[6]) {
+		        	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
+		        	return;
+		        }
+
+		        if (boxList[1] == boxList[4] && boxList[4] == boxList[7]) {
+		        	boxList[1] ? alert("X wins!!!") : alert("O wins!!!");
+		        	return;
+		        } 
+
+		        if (boxList[2] == boxList[5] && boxList[5] == boxList[8]) {
+		        	boxList[2] ? alert("X wins!!!") : alert("O wins!!!");
+		        	return;
+		        } 
+
+		        if (boxList[0] == boxList[4] && boxList[4] == boxList[8]) {
+		         	boxList[0] ? alert("X wins!!!") : alert("O wins!!!");
+		         	return;
+		        }
+
+		        if (boxList[2] == boxList[4] && boxList[4] == boxList[6]) {
+					boxList[2] ? alert("X wins!!!") : alert("O wins!!!");
+					return;
+		        }
+
+		        if(clickTimes == 9) {
+		        	alert("平局！！");
+		        }
+
+		    });
+		</script>
+	</body>
+</html>
