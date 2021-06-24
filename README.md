@@ -1,2 +1,1 @@
-# mcplus.github.io
-井字棋
+[井字棋](./井字棋.html)
